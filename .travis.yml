@@ -38,8 +38,7 @@ matrix:
 # exclude failed job amd64,ppc64le (go: 1.12.x env: GO111MODULE=off)
 jobs:
   exclude: 
-    - arch: amd64
-      go: 1.12.x
+    - go: 1.12.x
       env: GO111MODULE=off
 
 script:
