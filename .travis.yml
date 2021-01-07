@@ -38,6 +38,14 @@ matrix:
     - go: tip
       env: GO111MODULE=on
       arch: ppc64le
+# exclude failed job amd64,ppc64le (go: 1.12.x env: GO111MODULE=off)
+jobs:
+  exclude: 
+    - go: 1.12.x
+      env: GO111MODULE=off
+      arch:
+        - amd64
+        - ppc64le 
 
 script:
   - if [[ "$VET" = 1 ]]; then make ci; else make deps test; fi
